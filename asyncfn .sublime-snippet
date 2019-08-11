@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+let ${1:asyncfn} = async (${2:Parameter}) => {
+	await console.log(${2:Parameter})
+}
+]]></content>
+	<tabTrigger>asyncfn</tabTrigger>
+	<scope>source.js</scope>
+	<description></description>
+</snippet>

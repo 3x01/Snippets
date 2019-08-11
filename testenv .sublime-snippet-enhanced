@@ -1,0 +1,43 @@
+<snippet>
+	<content><![CDATA[
+'use strict';
+
+var assert = require('assert');
+
+console.log('Checking environment variables');
+
+// NODE_ENV
+assert(
+	['development', 'production'].includes(process.env.NODE_ENV),
+	"NODE_ENV must be set to 'development' or 'production'"
+);
+
+// PORT
+assert(
+	process.env.PORT === undefined || (!isNaN(process.env.PORT) && process.env.PORT < 65536),
+	'PORT must be unset or use integer 65535 or less'
+);
+
+// DB_CONFIG
+assert.doesNotThrow(() => {
+	const DB_CONFIG_KEYS = ['database', 'user', 'password', 'server', 'port', 'pool'];
+	function dbConfigTester(config) {
+		DB_CONFIG_KEYS.forEach((element) => {
+			if (element in config === false) {
+				throw new Error();
+			}
+		});
+	}
+
+	if (dbConfigTester(JSON.parse(process.env.DB_CONFIG))) {
+		throw new Error();
+	}
+}, 'DB_CONFIG does not meet requirements.  Must be an object with required keys: database, user, password, server, port, pool');
+
+console.log('Environment variables pass basic validation');
+
+]]></content>
+	<tabTrigger>testenv</tabTrigger>
+	<scope>source.js</scope>
+	<description></description>
+</snippet>

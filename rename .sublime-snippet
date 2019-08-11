@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+
+fs.rename(${1:Source}, ${2:Dest}, function (err) {
+  if (err) {
+    console.log(`Error renaming file.`);
+  }
+  console.log(`Successfully renamed file.`);
+})
+]]></content>
+	<tabTrigger>rename</tabTrigger>
+	<scope>source.js</scope>
+	<description></description>
+</snippet>

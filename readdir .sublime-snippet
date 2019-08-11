@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+
+fs.readdir(${1:'C:/Users/dj075/Downloads'},  function(err, ${2:files}) {
+	if(err){console.log(err);}
+	
+	for (var i = ${2:files}.length - 1; i >= 0; i--) {
+		console.log(${2:files}[i]);
+	};
+});
+]]></content>
+	<tabTrigger>readdir</tabTrigger>
+	<scope>source.js</scope>
+	<description></description>
+</snippet>

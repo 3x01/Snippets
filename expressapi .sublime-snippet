@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+
+const express = require('express');
+const cookieParser = require('cookie-parser');
+
+
+var app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+app.get('${1:/}', (req, res, next) => {
+  res.sendStatus(204);
+});
+
+]]></content>
+	<tabTrigger>api</tabTrigger>
+	<scope>source.js</scope>
+	<description></description>
+</snippet>

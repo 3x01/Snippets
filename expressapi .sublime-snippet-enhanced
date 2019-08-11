@@ -1,0 +1,35 @@
+<snippet>
+	<content><![CDATA[
+'use strict';
+
+const express = require('express');
+const cookieParser = require('cookie-parser');
+
+
+var app = express();
+
+// app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+app.get('/', (req, res, next) => {
+  res.sendStatus(204);
+});
+
+app.use('${1:/api}', apiRoute);
+
+// error handler
+app.use(function(err, req, res, next) {
+  res.locals.message = err.message;
+  // render the error page
+  res.sendStatus(500);
+});
+
+module.exports = app;
+
+]]></content>
+	<tabTrigger>expressapi</tabTrigger>
+	<scope>source.js</scope>
+	<description></description>
+</snippet>

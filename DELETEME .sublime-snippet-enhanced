@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+const fs = require('fs');
+
+fs.readdir('C:/Users/dj075',  function(err, files) {
+	if(err){console.log(err);}
+	console.log(files);
+});
+]]></content>
+	<tabTrigger>DELETEME</tabTrigger>
+	<scope>source.js</scope>
+	<description></description>
+</snippet>

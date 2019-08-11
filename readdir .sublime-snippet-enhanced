@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+
+fs.readdir($1:Directory,  function(err, items) {
+	console.log(items);
+}
+]]></content>
+	<tabTrigger>readdir</tabTrigger>
+	<scope>source.js</scope>
+	<description></description>
+</snippet>

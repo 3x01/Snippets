@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+if (!fs.existsSync(${1:destFolder})){
+    console.log(`${1:destFolder} does not exist. Creating it now...`);
+    fs.mkdirSync(${1:destFolder});
+ }
+]]></content>
+	<tabTrigger>direxists</tabTrigger>
+	<scope>source.js</scope>
+	<description></description>
+</snippet>

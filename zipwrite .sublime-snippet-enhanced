@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+const AdmZip = require('adm-zip');
+
+
+writeZip = function(dir,name,destFolder) {
+    // creating archives
+    var zip = new AdmZip();
+      // Check if destination folder exists and create it if not
+      if (!fs.existsSync(destFolder)){
+          console.log(`\${destFolder} does not exist. Creating it now...`);
+          fs.mkdirSync(destFolder);
+      }
+      let outPath = `\${destFolder}/\${name}.zip`;
+      zip.addLocalFolder(dir);
+      zip.writeZip(outPath)
+
+};
+
+writeZip(${1:Dir},${2:fileName},${3:DestFolder})
+
+]]></content>
+	<tabTrigger>zipwrite</tabTrigger>
+	<scope>source.js</scope>
+	<description></description>
+</snippet>

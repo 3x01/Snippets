@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+let $1 = {
+	$2:$3
+}
+]]></content>
+	<tabTrigger>object</tabTrigger>
+	<scope>source.js</scope>
+	<description>Simple Javascript Object</description>
+</snippet>

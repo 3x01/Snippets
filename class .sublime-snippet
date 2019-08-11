@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+class $1 {
+	constructor($2) {
+		this.$3 = 'DefaultName' || $2.$3;
+	}
+	
+}
+ 
+]]></content>
+	<tabTrigger>class</tabTrigger>
+	<scope>source.js</scope>
+	<description>Simple Javascript Class</description>
+</snippet>
